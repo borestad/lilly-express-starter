@@ -1,0 +1,19 @@
+{
+  "name": "lilly-express-starter",
+  "version": "0.0.0",
+  "description": "My own preferences & best practices when building stuff for the web",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/borestad/lilly-express-starter.git"
+  },
+  "author": "Johan Borestad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/borestad/lilly-express-starter/issues"
+  },
+  "homepage": "https://github.com/borestad/lilly-express-starter"
+}
