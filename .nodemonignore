@@ -1,0 +1,8 @@
+# static files
+./public
+./node_modules
+
+*.css
+*.jpg
+*.png
+*.gif
