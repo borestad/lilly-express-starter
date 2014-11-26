@@ -2,7 +2,7 @@
 now     = Date.now()
 app     = require('express')()
 colors  = require 'colors'
-pkg     = require './package.json'
+pkg     = require 'package.json'
 util    = require 'util'
 
 #options = require("./lib/spec")(app)
@@ -21,8 +21,6 @@ console.log "  PID            : #{process.pid}"
 console.log "  Node           : #{process?.versions?.node}"
 console.log "  Ruby           : #{process?.env?.RUBY_VERSION}"
 console.log "  Process title  : #{process?.title}"
-
-
 console.log ""
 console.log "  Environment    : [#{app.settings.env}]"
 console.log "  Listening on   : #{('http://localhost:' + port).cyan.underline}"

@@ -31,3 +31,7 @@ task "npm:postuninstall", log ->
 task "npm:preupdate", log ->
 
 task "npm:postupdate", log ->
+
+task "test", log ->
+
+task "deploy", log ->
