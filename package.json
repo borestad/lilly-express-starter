@@ -8,7 +8,8 @@
   },
   "//": "==== DEV-DEPENDENCIES ====",
   "scripts": {
-    "start": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q ./api/server.coffee",
+    "start": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/node-dev ./api/server.coffee",
+    "dev": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q -d 0 ./api/server.coffee",
     "q": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/coffee ./api/server.coffee",
     "debug": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q --debug ./api/server.coffee",
     "test": "NODE_ENV=test NODE_PATH=./:./config:./api/controllers ./node_modules/.bin/mocha",
@@ -58,6 +59,7 @@
     "multer": "^0.1.6",
     "newrelic": "^1.14.0",
     "next-update": "^0.5.0",
+    "node-dev": "^2.6.0",
     "node-sass": "^1.2.3",
     "nodemon": "^1.2.1",
     "nunjucks": "^1.1.0",
