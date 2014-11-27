@@ -3,12 +3,11 @@ module.exports.start = (app) ->
 	config  = app.config
 	pkg 	= app.config.pkg
 
-	configure: ->
-
 	initialize: (cb) ->
 
-	  console.log "\n--------------------------------------------------------".grey
-	  console.log "  Package        : #{pkg.name.green}"
+	  console.log "=========================================================".grey
+	  console.log ""
+	  console.log "  Name           : #{pkg.name.green}"
 	  console.log "  Version        : #{pkg.version}"
 	  console.log "  Time           : #{new Date()}"
 	  console.log "  Dependencies   : #{Object.keys(pkg.dependencies).length}"
@@ -18,6 +17,9 @@ module.exports.start = (app) ->
 	  console.log "  Node           : #{process?.versions?.node}"
 	  console.log "  Process title  : #{process?.title}"
 	  console.log ""
-	  console.log "  Environment    : [#{app.settings.env}]"
+	  console.log "  Environment    : #{app.settings.env}"
 	  console.log "  Listening on   : #{('http://localhost:' + config.port).cyan.underline}"
+	  console.log ""
 	  console.log "--------------------------------------------------------".grey
+
+	  cb?()

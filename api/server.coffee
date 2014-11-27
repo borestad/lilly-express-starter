@@ -1,3 +1,3 @@
-require('./lib/express') (server, app) ->
+require('./bootstrap/express')
 
-  # console.log 'Application is running'
+# if module.parent

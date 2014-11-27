@@ -8,7 +8,7 @@
   },
   "//": "==== DEV-DEPENDENCIES ====",
   "scripts": {
-    "start": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q ./api/server.coffee",
+    "start": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q ./api/server.coffee",
     "q": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/coffee ./api/server.coffee",
     "debug": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q --debug ./api/server.coffee",
     "test": "NODE_ENV=test NODE_PATH=./:./config:./api/controllers ./node_modules/.bin/mocha",
@@ -47,6 +47,8 @@
     "jade": "1.7.0",
     "less": "^2.1.1",
     "lodash": "^2.4.1",
+    "loopback": "^2.8.2",
+    "loopback-datasource-juggler": "^2.11.0",
     "lusca": "^1.0.2",
     "memoize": "^0.1.1",
     "method-override": "~2.3.0",
