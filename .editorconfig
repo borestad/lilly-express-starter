@@ -1,0 +1,45 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+
+
+## FEATURE SPECIFICS ##
+
+# Use 2 spaces for indentation
+# Tabs are amazing, in theory
+# Read this piece and make up your own opinion
+# http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e
+
+[*.{html,js,coffee,rb,scss,xml,jade}]
+indent_size = 2
+
+# TRIM TRAILING WHITESPACE
+[*.{html,js,coffe, rb,scss,xml}]
+trim_trailing_whitespace = false
+
+# INSERT FINAL NEWLINE
+[*.{html,js,rb,scss,xml}]
+insert_final_newline = true
+
+[*.coffee]
+
+
+[*.{css,scss}]
+
+[*.{twig,handlebars,html}]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+
+
+## LANGUAGE SPECIFICS ##
+[*.md]
+trim_trailing_whitespace = true
