@@ -1,3 +1,3 @@
-require('./lib/bootstrap') (app) ->
+require('./lib/express') (server, app) ->
 
-  console.log 'application running!'
+  # console.log 'Application is running'
