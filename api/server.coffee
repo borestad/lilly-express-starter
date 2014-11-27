@@ -19,7 +19,6 @@ console.log "  Used heap      : #{ (process.memoryUsage().heapUsed / 1024 / 1024
 console.log "  Bootstrap time : #{Date.now() - now} ms"
 console.log "  PID            : #{process.pid}"
 console.log "  Node           : #{process?.versions?.node}"
-console.log "  Ruby           : #{process?.env?.RUBY_VERSION}"
 console.log "  Process title  : #{process?.title}"
 console.log ""
 console.log "  Environment    : [#{app.settings.env}]"
