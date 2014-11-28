@@ -4,7 +4,7 @@ app     = require 'api/bootstrap/express'
 describe 'GET /', ->
 
   it 'should return 200 OK', (done) ->
-    request(app)
+    request app
     .get '/'
     .expect /Hello world!/
     .expect 200, done
