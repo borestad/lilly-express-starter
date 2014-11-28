@@ -1,7 +1,7 @@
 module.exports.start = (app) ->
   colors  = require 'colors'
   config  = app.config
-  pkg 	= app.config.pkg
+  pkg     = require 'package.json'
 
   initialize: (cb) ->
 
