@@ -7,8 +7,9 @@ module.exports = (app) ->
   # model = new IndexModel()
 
   app.get '/', (req, res) ->
-    #res.render 'index', model
-    req.session.foo = 'foobar'
-    console.log req.session
-    res.send 'Hello world!'
+    res.render 'index',
+    	foo: 'bar'
+
+    #req.session.foo = 'foobar'
+    #console.log req.session
 

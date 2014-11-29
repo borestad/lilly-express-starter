@@ -1,0 +1,5 @@
+{% extends "layouts/default.nunjucks" %}
+
+{% block body %}
+<p>Hello world with nunjucks! {{foo}}</p>
+{% endblock %}

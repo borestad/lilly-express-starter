@@ -8,7 +8,7 @@
   },
   "//": "===================================",
   "scripts": {
-    "start": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/node-dev ./server.coffee",
+    "start": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/node-dev ./server.coffee",
     "dev": "DEBUG=* NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q -d 0 ./server.coffee",
     "q": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/coffee ./server.coffee",
     "debug": "NODE_PATH=./:./config:./api/controllers NODE_ENV=development ./node_modules/.bin/nodemon -q --debug ./server.coffee",
