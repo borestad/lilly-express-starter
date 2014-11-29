@@ -1,5 +1,5 @@
 request = require 'supertest-as-promised'
-app     = require 'bootstrap/express'
+app     = require 'lib/bootstrap'
 
 describe 'GET /', ->
 

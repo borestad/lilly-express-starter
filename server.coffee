@@ -1,3 +1,3 @@
-require('./config/bootstrap/express')
+require('./lib/bootstrap')
 
 # if module.parent

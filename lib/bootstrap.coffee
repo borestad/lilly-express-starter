@@ -1,29 +1,29 @@
-#'use strict'
+'use strict'
 
-#debug             = require('debug')('http')
-# _                 = require 'lodash'
-# Benchmark         = require 'benchmark'
-# bodyParser        = require 'body-parser'
-# colors            = require 'colors'
-# compress          = require 'compression'
-# connectAssets     = require 'connect-assets'
-# connectMongo      = require 'connect-mongo'
-# cookieParser      = require 'cookie-parser'
-# errorHandler      = require 'errorhandler'
-# express           = require 'express'
-# expressValidator  = require 'express-validator'
-# flash             = require 'express-flash'
-# glob              = require 'glob'
-# http              = require 'http'
-# lusca             = require 'lusca'
-# methodOverride    = require 'method-override'
-# mongoose          = require 'mongoose'
-# morgan            = require 'morgan'
-# passport          = require 'passport'
-# path              = require 'path'
-# session           = require 'express-session'
-# util              = require 'util'
-nconfig             = require 'config'
+debug             = require('debug')('http')
+_                 = require 'lodash'
+Benchmark         = require 'benchmark'
+bodyParser        = require 'body-parser'
+colors            = require 'colors'
+compress          = require 'compression'
+connectAssets     = require 'connect-assets'
+connectMongo      = require 'connect-mongo'
+cookieParser      = require 'cookie-parser'
+errorHandler      = require 'errorhandler'
+express           = require 'express'
+expressValidator  = require 'express-validator'
+flash             = require 'express-flash'
+glob              = require 'glob'
+http              = require 'http'
+lusca             = require 'lusca'
+methodOverride    = require 'method-override'
+mongoose          = require 'mongoose'
+morgan            = require 'morgan'
+passport          = require 'passport'
+path              = require 'path'
+session           = require 'express-session'
+util              = require 'util'
+config            = require '../config/config'
 
 env = process.env.NODE_ENV or 'development'
 
@@ -35,9 +35,10 @@ app = express()
 # ###
 # # Global Config
 # ###
-config = app.config = _.extend nconfig,
-  performance:
-    timing: process.hrtime()
+app.config = config
+# config = app.config = _.extend nconfig,
+#   performance:
+#     timing: process.hrtime()
 
 #app.set('views', config.root + '/app/views');
 #app.set('view engine', 'ejs');
@@ -46,8 +47,7 @@ config = app.config = _.extend nconfig,
 ###*
 Connect to MongoDB.
 ###
-console.log config
-mongoose.connect config.db.url
+mongoose.connect config.get('db:url')
 mongoose.connection.on "error", ->
   console.error "MongoDB Connection Error. Please make sure that MongoDB is running."
 
@@ -89,7 +89,7 @@ app.use session(
   saveUninitialized: true
   secret: 'foobar'
   store: new MongoStore(
-    url: config.session.mongodb.url
+    url: config.get('session:mongodb:url')
     auto_reconnect: true
   )
 )
@@ -111,10 +111,10 @@ for file in glob.sync 'api/controllers/**/*.coffee'
 
 # Create and start HTTP server.
 server = http.createServer(app)
-server.listen(app.config.port)
+server.listen(app.config.get('http:port'))
 
 server.on "listening", ->
-  require('./hooks/http/start').start(app).initialize.apply @, arguments
+  require('../config/bootstrap/hooks/http/start').start(app).initialize.apply @, arguments
 
 
 module.exports = app

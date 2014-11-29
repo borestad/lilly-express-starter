@@ -19,7 +19,7 @@ module.exports.start = (app) ->
     console.log "  Process title  : #{process?.title}"
     console.log ""
     console.log "  Environment    : #{app.settings.env}"
-    console.log "  Listening on   : #{('http://localhost:' + config.port).cyan.underline}"
+    console.log "  Listening on   : #{('http://localhost:' + config.get('http:port')).cyan.underline}"
     console.log ""
     console.log "=========================================================".grey
     console.log ""
