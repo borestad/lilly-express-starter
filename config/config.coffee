@@ -1,5 +1,7 @@
 nconf = require 'nconf'
 
+nconf.use 'memory'
+
 nconf.overrides
 	always: "be this value"
 

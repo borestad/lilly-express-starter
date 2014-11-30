@@ -14,14 +14,17 @@ path              = require 'path'
 config            = require '../config/config'
 nunjucks          = require 'nunjucks'
 
-env = process.env.NODE_ENV or 'development'
+config.set 'cwd', process.cwd()
+config.set 'env', process.env.NODE_ENV or 'development'
+config.set 'views:path', path.join(__dirname, '../api/views')
+
 
 ###
 # Setup
 ###
 app = express()
 
-# app.set 'views', path.join(__dirname, '../views')
+app.set 'views', config.get('views:path')
 app.set 'view engine', config.get('views:engine')
 
 
@@ -55,7 +58,7 @@ for file in glob.sync 'config/*.coffee'
 require('./middleware')(app)
 
 # configure nunjucks to work with Express
-env = new nunjucks.Environment(new nunjucks.FileSystemLoader('views'))
+env = new nunjucks.Environment(new nunjucks.FileSystemLoader(app.get 'views'))
 env.express(app);
 
 
