@@ -24,6 +24,7 @@ admin.md
 config/local.js
 config/local.coffee
 .tmp
+vendor/bower
 
 
 ################################################

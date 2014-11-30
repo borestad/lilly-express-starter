@@ -1,4 +1,7 @@
 {
+  "directory": "vendor/bower",
   "json": "bower.json",
-  "scripts": {}
+  "scripts": {
+    "postinstall": "cake bower:postinstall"
+  }
 }

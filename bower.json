@@ -11,7 +11,17 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "components"
+    "components",
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
   ],
   "license": "MIT",
   "private": true,

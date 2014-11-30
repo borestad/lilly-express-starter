@@ -45,5 +45,5 @@ task 'npm:postupdate', log ->
 task 'test', log ->
 task 'deploy', log ->
 
-#task 'bower:postinstall'
+task 'bower:postinstall'
 
