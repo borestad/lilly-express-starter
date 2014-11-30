@@ -1,9 +1,26 @@
 {
   "name": "lilly-express-starter",
-  "version": "0.0.1",
+  "version": "0.0.0",
+  "authors": [
+    "johan@borestad.com"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "install": {
+    "path": "public/components"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "normalize-css": "~3.0.2",
+    "foundation": "~5.4.7"
+  }
 }

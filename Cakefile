@@ -17,29 +17,33 @@ npmExec = (cmd) ->
 # NPM SCRIPT TASKS
 #
 
-task "npm:prepublish", log ->
+task 'npm:prepublish', log ->
   # Don't use this task within npm install
   # https://github.com/npm/npm/issues/3059
 
-task "npm:postpublish", log ->
+task 'npm:postpublish', log ->
 
-task "npm:preinstall", log ->
-task "npm:postinstall", log ->
+task 'npm:preinstall', log ->
+task 'npm:postinstall', log ->
 
-task "npm:preuninstall", log ->
-task "npm:postuninstall", log ->
+task 'npm:preuninstall', log ->
+task 'npm:postuninstall', log ->
 
-task "npm:prestart", log ->
-task "npm:poststart", log ->
+task 'npm:prestart', log ->
+task 'npm:poststart', log ->
 
-task "npm:pretest", log ->
-task "npm:posttest", log ->
+task 'npm:pretest', log ->
+task 'npm:posttest', log ->
 
-task "npm:prerestart", log ->
-task "npm:postrestart", log ->
+task 'npm:prerestart', log ->
+task 'npm:postrestart', log ->
 
-task "npm:preupdate", log ->
-task "npm:postupdate", log ->
+task 'npm:preupdate', log ->
+task 'npm:postupdate', log ->
 
-task "test", log ->
-task "deploy", log ->
+task 'test', log ->
+task 'deploy', log ->
+
+task 'bower:postinstall', ->
+	npmExec 'bower-installer'
+
