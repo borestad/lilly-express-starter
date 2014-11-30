@@ -8,12 +8,6 @@
     "globals",
     "node"
   ],
-  "install": {
-    "path": "public/components",
-    "sources" : {
-      "modernizr" : "bower_components/modernizr/modernizr.js"
-    }
-  },
   "ignore": [
     "**/.*",
     "node_modules",
