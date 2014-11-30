@@ -1,7 +1,4 @@
 {
-  "directory": "public/components",
   "json": "bower.json",
-  "scripts": {
-    "postinstall": "cake bower:postinstall"
-  }
+  "scripts": {}
 }

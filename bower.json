@@ -9,7 +9,10 @@
     "node"
   ],
   "install": {
-    "path": "public/components"
+    "path": "public/components",
+    "sources" : {
+      "modernizr" : "bower_components/modernizr/modernizr.js"
+    }
   },
   "ignore": [
     "**/.*",
@@ -19,8 +22,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1",
     "normalize-css": "~3.0.2",
-    "foundation": "~5.4.7"
+    "foundation": "~5.4.7",
+    "modernizr": "~2.8.3"
   }
 }
