@@ -20,7 +20,7 @@ session           = require 'express-session'
 config            = require '../config/config'
 
 
-module.exports  = (app) ->
+module.exports  = (app, router) ->
 	# Compression
 	app.use compress()
 
@@ -42,7 +42,7 @@ module.exports  = (app) ->
 	app.use cookieParser()
 
 	app.use (req, res, next) ->
-	  console.log res.config
+	  # console.log res.config
 	  next();
 
 	app.use session(
@@ -57,5 +57,8 @@ module.exports  = (app) ->
 	app.use passport.initialize()
 	app.use passport.session()
 	app.use flash()
+
+	# Apply the router
+	app.use '/', router
 
 	return app

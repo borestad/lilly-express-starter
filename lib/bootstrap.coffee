@@ -18,27 +18,22 @@ config.set 'cwd', process.cwd()
 config.set 'env', process.env.NODE_ENV or 'development'
 config.set 'views:path', path.join(__dirname, '../api/views')
 
-
 ###
 # Setup
 ###
 app = express()
+router = express.Router()
 
 app.set 'views', config.get('views:path')
 app.set 'view engine', config.get('views:engine')
 
-
-# ###
-# # Global Config
-# ###
+###
+# Global Config
+###
 app.config = config
 # config = app.config = _.extend nconfig,
 #   performance:
 #     timing: process.hrtime()
-
-
-
-
 
 ###*
 Connect to MongoDB.
@@ -55,24 +50,18 @@ for file in glob.sync 'config/*.coffee'
   app.config = _.extend app.config, require(file)
 
 
-require('./middleware')(app)
+require('./middleware')(app, router)
 
 # configure nunjucks to work with Express
 env = new nunjucks.Environment(new nunjucks.FileSystemLoader(app.get 'views'))
 env.express(app);
 
-
-
 # # 500 Error Handler.
 # if env is 'development'
 #   app.use errorHandler()
 
-#bootstrap = glob.sync 'api/bootstrap/**/*.coffee'
-
-#console.log controllers, bootstrap
-
 for file in glob.sync 'api/controllers/**/*.controller.coffee'
-  require(file)(app)
+  require(file)(router)
 
 # Create and start HTTP server.
 server = http.createServer(app)

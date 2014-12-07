@@ -46,6 +46,7 @@
     "express": "~4.10.4",
     "express-enrouten": "^1.1.1",
     "express-flash": "0.0.2",
+    "express-router": "0.0.1",
     "express-session": "^1.9.2",
     "express-validator": "^2.7.0",
     "forever": "^0.13.0",
